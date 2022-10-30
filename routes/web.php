@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\MidtransController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/midtrans/success', [MidtransController::class, 'success']);
+Route::get('/midtrans/unfinish', [MidtransController::class, 'unfinish']);
+Route::get('/midtrans/error', [MidtransController::class, 'error']);
